@@ -1,0 +1,142 @@
+.menu-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 60px;
+	height: 100vh;
+	background-color: #1a1a1a;
+	border-right: 1px solid grey;
+}
+
+.menu-open-button-container {
+	
+}
+
+.menu-content {
+	position: fixed;	
+	top: 0;
+	left: 60px;
+	height: 100vh;
+	width: 0vw;
+	transition-delay: 0.1s;
+	transition: 0.3s ease-out;
+	background-color: #1a1a1a;
+}
+
+.underlay {
+	position: fixed;	
+	top: 0;
+	left: 60px;
+	height: 100vh;
+	width: 0vw;
+	transition: 0.3s ease-out;
+	background-color: #FAF0CA;
+}
+
+.underlay.menu-open {
+	animation: menuOpen 0.3s ease-in;
+	animation-fill-mode: both;
+}
+
+.underlay.menu-closed {
+	animation: menuClose 0.3s ease-out;
+	animation-fill-mode: both;
+	animation-delay: 0.2s;
+}
+
+.menu-content.menu-open {
+	animation: menuOpen 0.3s ease-out;
+	animation-fill-mode: both;
+	animation-delay: 0.2s;
+}
+
+.menu-content.menu-closed {
+	animation: menuClose 0.3s ease-in;
+	animation-fill-mode: both;
+}
+
+.menu-links {
+	margin-top: 200px;
+	margin-left: 120px;
+	width: calc(60vw - 100px);
+	opacity: 0;
+	animation: show 0s;
+	animation-delay: 0.2s;
+	animation-fill-mode: forwards;
+}
+
+.menu-links.hovered .menu-link:not(:hover) {
+	opacity: 0.5;
+}
+
+.menu-link {
+	text-decoration: none;
+	color: white;
+	font-size: 76px;
+	display: block;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation: slide-in-left 0.5s ease-out;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation: slide-in-left 0.5s ease-out;
+	-webkit-transform: translateX(0px);
+	transform: translateX(0px);
+}
+
+.menu-link:hover {
+	color: white;
+	text-decoration: none;
+}
+
+@keyframes show {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes slide-in-left {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(-80px);
+		transform: translateX(-80px);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateX(0px);
+		transform: translateX(0px);	
+	}
+}
+
+@keyframes slide-in-left {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateX(-80px);
+		transform: translateX(-80px);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: translateX(0px);
+		transform: translateX(0px);	
+	}
+}
+
+@keyframes menuOpen {
+	from {
+		width: 0vw;
+	}
+	to {
+		width: 60vw;
+	}
+}
+
+@keyframes menuClose {
+	from {
+		width: 60vw;
+	}
+	to {
+		width: 0vw;
+	}
+}
