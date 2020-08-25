@@ -7,7 +7,7 @@ import {
   Redirect
 } from 'react-router-dom'
 import { apiEndpoint } from './prismic-configuration'
-import { Help, Preview, NotFound, Home } from './pages'
+import { Help, Preview, NotFound, Home, Page1 } from './pages'
 
 /**
  * Main application componenet
@@ -26,6 +26,7 @@ const App = (props) => {
           <Redirect exact from='/' to='/help' />
           <Route exact path='/help' component={Help} />
           <Route exact path='/home' component={Home} />
+          <Route exact path='/page1' component={Page1} />
           <Route exact path='/preview' component={Preview} />
           <Route component={NotFound} />
         </Switch>

@@ -1,0 +1,39 @@
+.page1-pageChangeOverlay {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	width: 100vw;
+	background-color: #EE964B;
+	transition: 1s ease-out;
+	z-index: 3;
+
+	&.loading {
+		transition-delay: 0.2s;
+		transition: 0.5s ease-out;
+		width: 0vw;
+	}
+
+	&.changing {
+		width: 100vw;
+		transition: 0.5s ease-out;
+	}
+}
+
+.pageHeader {
+	position: fixed;
+	width: 100vw;
+	top: 20%;
+	text-align: center;
+}
+
+.centerButton {
+	position: fixed;
+	top: 50%;
+	left: calc(50% - 75px);
+	height: 50px;
+	width: 150px;
+	background-color: white;
+	border: 3px solid #EE964B;
+	color: #EE964B;
+}
